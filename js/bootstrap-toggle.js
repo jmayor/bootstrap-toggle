@@ -140,14 +140,14 @@
 	// TOGGLE PLUGIN DEFINITION
 	// ========================
 
-	function Plugin(option) {
+	function Plugin(option, silent) {
 		return this.each(function () {
 			var $this   = $(this)
 			var data    = $this.data('bs.toggle')
 			var options = typeof option == 'object' && option
 
 			if (!data) $this.data('bs.toggle', (data = new Toggle(this, options)))
-			if (typeof option == 'string' && data[option]) data[option]()
+			if (typeof option == 'string' && data[option]) data[option](silent)
 		})
 	}
 
