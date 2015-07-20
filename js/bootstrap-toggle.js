@@ -63,7 +63,7 @@
 		var $toggle = $('<div class="toggle btn" data-toggle="toggle">')
 			.addClass( this.$element.prop('checked') ? this._onstyle : this._offstyle+' off' )
 			.addClass(size).addClass(this.options.style)
-
+		
 		this.$element.wrap($toggle)
 		$.extend(this, {
 			$toggle: this.$element.parent(),
@@ -71,17 +71,14 @@
 			$toggleOff: $toggleOff,
 			$toggleGroup: $toggleGroup
 		})
+		
 		this.$toggle.append($toggleGroup)
-
-		var width = this.options.width || Math.max($toggleOn.outerWidth(), $toggleOff.outerWidth())+($toggleHandle.outerWidth()/2)
-		var height = this.options.height || Math.max($toggleOn.outerHeight(), $toggleOff.outerHeight())
+		
+		
 		$toggleOn.addClass('toggle-on')
 		$toggleOff.addClass('toggle-off')
-		this.$toggle.css({ width: width, height: height })
-		if (this.options.height) {
-			$toggleOn.css('line-height', $toggleOn.height() + 'px')
-			$toggleOff.css('line-height', $toggleOff.height() + 'px')
-		}
+		
+	
 		this.update(true)
 		this.trigger(true)
 	}
